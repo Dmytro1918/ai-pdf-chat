@@ -76,8 +76,8 @@ const PricingSection: React.FC = () => {
   ];
 
   return (
-    <MaxWidthWrapper className="mt-12 mb-28 sm:mt-14 flex flex-col justify-center items-center text-center">
-      <h1 className="mb-16 max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl text-white">
+    <MaxWidthWrapper className="mt-12 pt- mb-28 sm:mt-14 flex flex-col justify-center items-center text-center">
+      <h1 className="m-20 max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl text-white">
         Choose your subscription and enjoy 30 days for <span className="text-blue-600">FREE!</span>
       </h1>
       <div className="pt-10 w-full flex flex-row text-center justify-around items-stretch">

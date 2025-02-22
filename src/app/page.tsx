@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./components/maxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Seo from "./components/seo";
+import NavBar, { defaultNavBarItems } from "./components/navBar";
 
 
 export default function Home () {
@@ -17,9 +18,10 @@ export default function Home () {
       "description": "Enjoy using PDF chat and get fast info.",
     },
   };
-  
+
   return (
     <>
+      <NavBar bgColor="bg-slate-900" navBarItems={defaultNavBarItems}></NavBar>
       <Seo {...seoData}></Seo>
       <MaxWidthWrapper className='mt-12 mb-28 sm:mt-40 flex flex-col justify-center items-center text-center'>
         <Link href='/description'>
