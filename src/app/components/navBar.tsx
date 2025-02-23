@@ -30,7 +30,7 @@ export const defaultNavBarItems = [
 const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor}) => {
     return (
         <>
-            <nav className={`fixed border-b-4 border-blue-800 top-0 w-full z-50 ${bgColor}`}>
+            <nav id='nav-bar'className={`fixed border-b-4 border-blue-800 top-0 w-full z-40 ${bgColor}`}>
                 <div className="flex items-center justify-center h-20 mx-auto max-w-7xl px-6">
 
                     <ul className="flex flex-row justify-between gap-32 items-center text-blue-700 text-2xl font-bold">
