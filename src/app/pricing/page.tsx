@@ -1,11 +1,15 @@
-import MaxWidthWrapper from "../components/maxWidthWrapper"
+import DottedBackground from "../components/dottedBackground";
+import NavBar, { defaultNavBarItems } from "../components/navBar";
+import PricingSection from "../components/pricingSection";
 
+  
+  
 export default function Pricing () {
     return (
-    <MaxWidthWrapper>
-        <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-5xl">
-            Here are some solutions that might stick to your plan!
-        </h1>
-    </MaxWidthWrapper>
+        <>
+            <NavBar bgColor="bg-slate-50" navBarItems={defaultNavBarItems} ></NavBar>
+            <DottedBackground children={<PricingSection></PricingSection>}/>
+            
+        </>
     )
 }
