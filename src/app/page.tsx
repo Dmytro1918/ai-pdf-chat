@@ -2,28 +2,18 @@ import Link from "next/link";
 import MaxWidthWrapper from "./components/maxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Seo from "./components/seo";
 import NavBar, { defaultNavBarItems } from "./components/navBar";
+import AnimatedSlide from "./components/welcomeAnimation";
 
 
 export default function Home () {
-  const seoData = {
-    title: "Gulty chat is welcoming You!",
-    description: "Enjoy using PDF chat and get fast info.",
-    image: "/talk.svg",
-    schemaMarkup: {
-      "@context": "https://guilty.org",
-      "@type": "WebPage",
-      "name": "Home Page",
-      "description": "Enjoy using PDF chat and get fast info.",
-    },
-  };
+
 
   return (
     <>
-      <NavBar bgColor="bg-slate-900" navBarItems={defaultNavBarItems}></NavBar>
-      <Seo {...seoData}></Seo>
+      <AnimatedSlide></AnimatedSlide>
       <MaxWidthWrapper className='mt-12 mb-28 sm:mt-40 flex flex-col justify-center items-center text-center'>
+      <NavBar bgColor="bg-slate-900" navBarItems={defaultNavBarItems}></NavBar>
         <Link href='/description'>
           <div className='mx-auto mb-8 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-600 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/65 cursor-pointer'> 
             <p className='text-md font-semibold text-blue-700'>

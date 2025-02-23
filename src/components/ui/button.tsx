@@ -19,7 +19,7 @@ const buttonVariants = cva(
           "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         ghost: "hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-800 dark:hover:text-neutral-50",
         link: "text-neutral-900 underline-offset-4 hover:underline dark:text-neutral-50",
-        blue: "bg-blue-600 text-white shadow hover:bg-transparent hover:text-white-600 dark:bg-blue-400 dark:text-white dark:hover:bg-transparent duration-700 transform hover:scale-120 origin-left dark:hover:text-blue-400",
+        blue: "bg-blue-600 text-white shadow hover:bg-transparent hover:text-black dark:bg-blue-400 dark:text-black dark:hover:bg-transparent duration-700 transform hover:scale-120 origin-left dark:hover:text-blue-400",
       },
       size: {
         default: "h-9 px-4 py-2 mw-10",
