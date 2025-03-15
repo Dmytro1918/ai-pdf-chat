@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+
 import { Geist, Geist_Mono, Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "./lib/utils";
+import { Provider } from "./components/Navigation";
+
 const inter = Inter({
   subsets:['latin']
 })
@@ -36,13 +39,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
-    <html lang="en">
-      <body
-        className={cn('min-h-screen font-sans antialised-granny', inter.className)}
-      >
-        {children}
-      </body>
-    </html>
+    <Provider>
+      <html lang="en">
+          <body
+            className={cn('min-h-screen font-sans antialised-granny', inter.className)}>
+            {children}
+          </body>
+      </html>
+    </Provider>
   );
 }

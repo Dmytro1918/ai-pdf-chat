@@ -16,6 +16,9 @@ export default {
   		}
   	},
   	extend: {
+		boxShadow: {
+			'cards': '0px 0px 0px 1px #FFFFFF0D inset, 0px 2px 4px 0px #0000001A, 0px 12px 28px 0px #00000012',
+		},
   		maxWidth: {
   			'8xl': '1408px'
   		},

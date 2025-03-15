@@ -1,4 +1,6 @@
+'use client'
 import { buttonVariants } from "@/components/ui/button"
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link"
 import { IoIosExpand } from "react-icons/io";
 
@@ -28,6 +30,8 @@ export const defaultNavBarItems = [
 ]
 
 const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor}) => {
+    const session = useSession()
+    console.log(session)
     return (
         <>
             <nav id='nav-bar'className={`fixed border-b-4 border-blue-800 top-0 w-full z-40 ${bgColor}`}>
@@ -42,14 +46,27 @@ const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor})
                             </li>
                         ))}
                         <li>
-                        <Link href='/' className={
+                        {session?.data ?  <Link href='/' className={
+                            buttonVariants({
+                            variant:"blue",
+                            size:'lg'
+                            })}
+                            onClick={()=> signOut({
+                                callbackUrl:'/'
+                            })}>
+                            Sign out 
+                            <IoIosExpand/>
+                        </Link>:
+                        
+                        <Link href='/api/auth/signin' className={
                             buttonVariants({
                             variant:"blue",
                             size:'lg'
                             })}>
-                            Sign up 
+                            Sign in 
                             <IoIosExpand/>
-                        </Link>
+                        </Link>}
+                       
                         </li>
                     </ul>
                 </div>

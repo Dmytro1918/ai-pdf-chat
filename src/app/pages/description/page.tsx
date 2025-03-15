@@ -1,4 +1,4 @@
-import MaxWidthWrapper from "../components/maxWidthWrapper";
+import MaxWidthWrapper from "../../components/maxWidthWrapper";
 import { Metadata,  } from "next";
 import Image from "next/image";
 
@@ -35,3 +35,4 @@ export default function Description () {
         </div>
         )
 }
+

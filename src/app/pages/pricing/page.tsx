@@ -1,6 +1,6 @@
-import DottedBackground from "../components/dottedBackground";
-import NavBar, { defaultNavBarItems } from "../components/navBar";
-import PricingSection from "../components/pricingSection";
+import DottedBackground from "../../components/dottedBackground";
+import NavBar, { defaultNavBarItems } from "../../components/navBar";
+import PricingSection from "../../components/pricingSection";
 import { Metadata } from "next";
 
 export const metadata :Metadata = {
