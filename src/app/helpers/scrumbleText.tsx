@@ -1,6 +1,6 @@
 'use client'
 import { gsap } from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(TextPlugin);
@@ -25,13 +25,19 @@ const ScrumbleText: React.FC<ScrumbleTextProps> = ({
     const textRef = useRef<HTMLSpanElement>(null);
     const [currentText, setCurrentText] = useState("");
     
-    useEffect(() => {
+    const generateRandomText = (length: number, charSet: string): string => {
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += charSet.charAt(Math.floor(Math.random() * charSet.length));
+        }
+        return result;
+    };
+    useLayoutEffect(() => {
         if (!textRef.current) return;
         
         gsap.killTweensOf(textRef.current);
         
         const randomText = generateRandomText(text.length, chars);
-        console.log(chars)
         setCurrentText(randomText);
         
         const timeline = gsap.timeline();
@@ -66,13 +72,6 @@ const ScrumbleText: React.FC<ScrumbleTextProps> = ({
         
     }, [text, className, chars, speed, revealDelay, duration]);
     
-    const generateRandomText = (length: number, charSet: string): string => {
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            result += charSet.charAt(Math.floor(Math.random() * charSet.length));
-        }
-        return result;
-    };
     
     const scrambleTextWithProgress = (original: string, charSet: string, progress: number): string => {
         let result = '';
