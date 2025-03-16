@@ -2,6 +2,7 @@
 import { gsap } from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
 import { TextPlugin } from "gsap/TextPlugin";
+import { generateRandomText, scrambleTextWithProgress } from "../lib/utils";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -25,13 +26,6 @@ const ScrumbleText: React.FC<ScrumbleTextProps> = ({
     const textRef = useRef<HTMLSpanElement>(null);
     const [currentText, setCurrentText] = useState("");
     
-    const generateRandomText = (length: number, charSet: string): string => {
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            result += charSet.charAt(Math.floor(Math.random() * charSet.length));
-        }
-        return result;
-    };
     useLayoutEffect(() => {
         if (!textRef.current) return;
         
@@ -71,19 +65,6 @@ const ScrumbleText: React.FC<ScrumbleTextProps> = ({
         });
         
     }, [text, className, chars, speed, revealDelay, duration]);
-    
-    
-    const scrambleTextWithProgress = (original: string, charSet: string, progress: number): string => {
-        let result = '';
-        for (let i = 0; i < original.length; i++) {
-            if (Math.random() < progress) {
-                result += original.charAt(i);
-            } else {
-                result += charSet.charAt(Math.floor(Math.random() * charSet.length));
-            }
-        }
-        return result;
-    };
     
     return <span ref={textRef} className={className}>{currentText}</span>;
 };

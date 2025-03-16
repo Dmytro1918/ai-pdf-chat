@@ -31,7 +31,6 @@ export const defaultNavBarItems = [
 
 const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor}) => {
     const session = useSession()
-    console.log(session)
     return (
         <>
             <nav id='nav-bar'className={`fixed border-b-4 border-blue-800 top-0 w-full z-40 ${bgColor}`}>

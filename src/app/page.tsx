@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import NavBar, { defaultNavBarItems } from "./components/navBar";
 import AnimatedSlide from "./components/welcomeAnimation";
-import { Cards } from "./components/cards";
+import { Cards } from "./components/cardComponents/cardsParent";
 import { cardsList } from "./data/cardsInfo";
 import ScrumbleText from "./helpers/scrumbleText";
 
