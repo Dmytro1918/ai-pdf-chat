@@ -38,7 +38,7 @@ const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor})
 
                     <ul className="flex flex-row justify-between gap-32 items-center text-blue-700 text-2xl font-bold">
                         {navBarItems.map((item, index)=> (
-                            <li key={index} className="hover:text-blue-500 hover:underline-offset-4 transition-all duration-700 transform hover:scale-150 origin-left">
+                            <li key={index} className="hover:text-blue-50 transition-colors duration-300 ease-in ">
                                 <Link href={item.url}>
                                     {item.title}
                                 </Link>

@@ -1,6 +1,6 @@
-import DottedBackground from "../../components/dottedBackground";
-import NavBar, { defaultNavBarItems } from "../../components/navBar";
-import PricingSection from "../../components/pricingSection";
+import DottedBackground from "../components/dottedBackground";
+import NavBar, { defaultNavBarItems } from "../components/navBar";
+import PricingSection from "../components/pricingSection";
 import { Metadata } from "next";
 
 export const metadata :Metadata = {
@@ -11,7 +11,7 @@ export const metadata :Metadata = {
 export default function Pricing () {
     return (
         <>
-            <NavBar bgColor="bg-slate-50" navBarItems={defaultNavBarItems} ></NavBar>
+            <NavBar bgColor="" navBarItems={defaultNavBarItems} ></NavBar>
             <DottedBackground children={<PricingSection></PricingSection>}/>
             
         </>
