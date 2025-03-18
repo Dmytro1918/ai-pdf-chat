@@ -11,7 +11,7 @@ export const metadata :Metadata = {
 export default function Pricing () {
     return (
         <>
-            <NavBar bgColor="bg-slate-50" navBarItems={defaultNavBarItems} ></NavBar>
+            <NavBar bgColor="" navBarItems={defaultNavBarItems} ></NavBar>
             <DottedBackground children={<PricingSection></PricingSection>}/>
             
         </>

@@ -1,4 +1,6 @@
+'use client'
 import { buttonVariants } from "@/components/ui/button"
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link"
 import { IoIosExpand } from "react-icons/io";
 
@@ -28,6 +30,7 @@ export const defaultNavBarItems = [
 ]
 
 const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor}) => {
+    const session = useSession()
     return (
         <>
             <nav id='nav-bar'className={`fixed border-b-4 border-blue-800 top-0 w-full z-40 ${bgColor}`}>
@@ -35,21 +38,34 @@ const NavBar:React.FC<NavBarProps> = ({navBarItems=defaultNavBarItems, bgColor})
 
                     <ul className="flex flex-row justify-between gap-32 items-center text-blue-700 text-2xl font-bold">
                         {navBarItems.map((item, index)=> (
-                            <li key={index} className="hover:text-blue-500 hover:underline-offset-4 transition-all duration-700 transform hover:scale-150 origin-left">
+                            <li key={index} className="hover:text-blue-50 transition-colors duration-300 ease-in ">
                                 <Link href={item.url}>
                                     {item.title}
                                 </Link>
                             </li>
                         ))}
                         <li>
-                        <Link href='/' className={
+                        {session?.data ?  <Link href='/' className={
+                            buttonVariants({
+                            variant:"blue",
+                            size:'lg'
+                            })}
+                            onClick={()=> signOut({
+                                callbackUrl:'/'
+                            })}>
+                            Sign out 
+                            <IoIosExpand/>
+                        </Link>:
+                        
+                        <Link href='/api/auth/signin' className={
                             buttonVariants({
                             variant:"blue",
                             size:'lg'
                             })}>
-                            Sign up 
+                            Sign in 
                             <IoIosExpand/>
-                        </Link>
+                        </Link>}
+                       
                         </li>
                     </ul>
                 </div>
